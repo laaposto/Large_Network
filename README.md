@@ -1,2 +1,5 @@
 # Large_Network
-Large network visualization, supporting 100K users and 1M edges
+
+Network visualization created with WebGL to support large number of nodes and edges
+
+DEMO: http://hackair-mklab.iti.gr/hackair-network/

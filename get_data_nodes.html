@@ -1,0 +1,28 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/jquery-csv.js"></script>
+<script charset="utf-8">
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "./raw_data/nodes.txt",
+            dataType: "text",
+            success: function (data) {
+                var data_fill = [];
+                var line;
+                var allTextLines = data.split(/\r\n|\n/);
+                for (var i = 1; i < allTextLines.length; i++) {
+                    line = allTextLines[i].split(/,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/);
+                    //data_fill.push('"'+line[11]+'"'); //bg.js
+                    //data_fill.push(line[1]); //clusters.js
+                    //data_fill.push(line[7]); //followers.js
+                    //data_fill.push(line[9]); //following.js
+                    //data_fill.push('"'+line[5]+'"'); //names.js
+                    //data_fill.push(line[4]); //sizes.js
+                    //data_fill.push(line[8]); //tweets.js
+                    data_fill.push('"' + line[6] + '"'); //users.js
+                }
+                console.log(data_fill.join(','));
+            }
+        });
+    });
+</script>

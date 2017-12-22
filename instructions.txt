@@ -1,0 +1,11 @@
+For Chronis:
+1. Remove @ from edges
+2. Replace empty communities names with undefined_i
+
+Development:
+1. Open raw_data/names and fill the html code inside #legend_main with the names.
+2. Run get_communities_number.html for each of the community and get the number of nodes.
+3. Run get_data_nodes.html for each of the bg.js, clusters.js, followers.js, following.js, names.js, sizes.js, tweets.js, users.js
+4. Run get_data_edges.html and fill edges.js
+5. Run get_positions.html and fill xis.js and yis.js
+6. Run get_autocomplete.html and fill autocomplete.js

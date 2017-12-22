@@ -1,0 +1,14 @@
+community_id,name
+0,English and general air pollution accounts
+1,French accounts
+2,German accounts
+3,undefined_1
+4,Science-Innovation
+5,"Τechnology, open data and sensors 2"
+6,Green-smart cities
+7,undefined_2
+8,Irish accounts
+9,Greek accounts
+10,"Τechnology, open data and sensors 1"
+11,Belgian-Norwegian accounts
+12,undefined_3

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HackAir | Users NetWork</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Users NetWork">
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Laaposto">
+</head>
+
+<body>
+
+
+<!-- JS -->
+<script src="js/data/clusters.js"></script>
+<script src="js/data/edges.js"></script>
+<script src="js/data/sizes.js"></script>
+<script src="js/data/users.js"></script>
+<script>
+    var clusters_tab = ["English and general air pollution accounts", "French accounts", "German accounts", "undefined_1", "Science-Innovation", "Technology, open data and sensors 2", "Green-smart cities", "undefined_2", "Irish accounts", "Greek accounts", "Technology, open data and sensors 1", "Belgian-Norwegian accounts", "undefined_3"];
+    var autocomplete = [];
+    for (var i = 0; i < users.length; i++) {
+        autocomplete.push({"value": users[i], "data": {"category": clusters_tab[clusters[i]], "popularity": sizes[i]}})
+    }
+    console.log(JSON.stringify(autocomplete));
+</script>
+<!-- END JS -->
+</body>
+
+</html>

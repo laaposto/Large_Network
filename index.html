@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Large Network</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Follower Network">
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Laaposto">
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Roboto+Slab:400,300,700&amp;subset=latin,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic"
+          rel="stylesheet" type="text/css">
+
+    <link rel="shortcut icon" href="imgs/mklab_logo.png" type="image/png"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!--END CSS -->
+
+</head>
+
+<body>
+<div id="graph-container"></div>
+<div id="info">
+    <h2 class="legend_wrapper border_dashed">Legend<img id="legend_close" src="imgs/arrow_up-16.png"></h2>
+
+    <div id="legend_main">
+        <p class="legend_title">Categories</p>
+
+        <p class="note">*Click on category for filtering</p>
+
+        <div class="legendcolor" style="background-color:#3366cc;"></div>
+        <div class="legendtext">English and general air pollution (6376)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#dc3912;"></div>
+        <div class="legendtext">French accounts (1119)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#ff9900;"></div>
+        <div class="legendtext">German accounts (2039)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#109618;"></div>
+        <div class="legendtext">undefined_1 (2387)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#990099;"></div>
+        <div class="legendtext">Science-Innovation (3125)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#0099c6;"></div>
+        <div class="legendtext">Technology, open data and sensors 2 (3007)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#dd4477;"></div>
+        <div class="legendtext">Green-smart cities (2402)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#66aa00;"></div>
+        <div class="legendtext">undefined_2 (1244)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#b82e2e;"></div>
+        <div class="legendtext">Irish accounts (772)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#316395;"></div>
+        <div class="legendtext">Greek accounts (1064)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#994499;"></div>
+        <div class="legendtext">Technology, open data and sensors 1 (4112)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#22aa99;"></div>
+        <div class="legendtext">Belgian-Norwegian accounts (2700)</div>
+        <br>
+
+        <div class="legendcolor" style="background-color:#aaaa11;"></div>
+        <div class="legendtext">undefined_3 (1670)</div>
+        <br>
+
+        <p class="legend_title">Degree</p>
+
+        <div class="legendcolor_degree" style="margin-bottom: 5px;"></div>
+        <div class="legendtext" style="top:-15px">1000</div>
+        <br>
+
+        <div class="legendcolor_degree" style="width: 20px;height: 20px;margin-left: 12px;"></div>
+        <div class="legendtext" style="top: -11px;left: 6px;">200</div>
+        <br>
+
+        <div class="legendcolor_degree" style="width: 10px;height: 10px;margin-left: 17px;"></div>
+        <div class="legendtext" style="top: -6px;left: 10px;"><10</div>
+        <br>
+    </div>
+    <h2 class="legend_wrapper border_solid">Navigation<img id="navigation_close"
+                                                           src="imgs/arrow_up-16.png"></h2>
+
+    <div id="navigation_main">
+        <ul class="square-bullets">
+            <li>Mouse wheel for zoom in /out</li>
+            <li>Drag stage for moving</li>
+            <li>Hover node to reveal username</li>
+            <li>Click node to reveal edges and user profile</li>
+            <li>Click on the page background to reset</li>
+        </ul>
+    </div>
+</div>
+
+<div id="input_wrapper">
+    <div class="input-field">
+        <input id="user" class="user_input" type="text" autocomplete="off">
+        <label for="user" class="">Search users</label>
+        <img class="search_icon" src="imgs/search-gray.png" alt="search">
+    </div>
+</div>
+<div id="loading">Loading network, please wait.....
+    <img id="loadimg" src="imgs/loading.gif" alt="loading..">
+</div>
+<div class="user_profile_wrapper">
+    <div class="twPc-bg"></div>
+    <div>
+        <div id="twPc-button"></div>
+        <a href="#" target="_blank" class="twPc-avatarLink">
+            <img src="#" class="twPc-avatarImg">
+        </a>
+
+        <div class="twPc-divUser">
+            <div class="twPc-divName">
+                <a href="#" target="_blank"></a>
+            </div>
+			<span>
+				<a href="#" target="_blank">@<span></span></a>
+			</span>
+        </div>
+
+        <div class="twPc-divStats">
+            <ul class="twPc-Arrange">
+                <li class="twPc-ArrangeSizeFit">
+                    <span class="twPc-StatLabel">Tweets</span>
+                    <span class="twPc-StatValue"></span>
+                </li>
+                <li class="twPc-ArrangeSizeFit">
+                    <span class="twPc-StatLabel">Following</span>
+                    <span class="twPc-StatValue"></span>
+                </li>
+                <li class="twPc-ArrangeSizeFit">
+                    <span class="twPc-StatLabel">Followers</span>
+                    <span class="twPc-StatValue"></span>
+                </li>
+            </ul>
+        </div>
+        <p class="note">*Stats correspond to the retrieval date (Aug 2017)</p>
+    </div>
+    <div id="connections">
+        <p class="connections_header">Mostly connected with:</p>
+
+        <div id="connections_stats"></div>
+        <div id="connections_users"></div>
+        <p class="note">*Click on user to see activity</p>
+    </div>
+</div>
+
+
+<!-- JS -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="js/data/clusters.js"></script>
+<script src="js/data/edges.js"></script>
+<script src="js/data/sizes.js"></script>
+<script src="js/data/users.js"></script>
+<script src="js/data/xis.js"></script>
+<script src="js/data/yis.js"></script>
+<script src="js/data/bg.js"></script>
+<script src="js/data/names.js"></script>
+<script src="js/data/tweets.js"></script>
+<script src="js/data/following.js"></script>
+<script src="js/data/followers.js"></script>
+<script src="js/data/autocomplete.js"></script>
+
+<script src="js/auto-complete.min.js"></script>
+<script src="js/sigma.core.js"></script>
+<script src="js/conrad.js"></script>
+<script src="js/sigma.utils.js"></script>
+<script src="js/sigma.settings.js"></script>
+<script src="js/sigma.classes.dispatcher.js"></script>
+<script src="js/sigma.classes.configurable.js"></script>
+<script src="js/sigma.classes.graph.js"></script>
+<script src="js/sigma.classes.camera.js"></script>
+<script src="js/sigma.classes.quad.js"></script>
+<script src="js/sigma.classes.edgequad.js"></script>
+<script src="js/sigma.captors.mouse.js"></script>
+<script src="js/sigma.captors.touch.js"></script>
+<script src="js/sigma.renderers.webgl.js"></script>
+<script src="js/sigma.renderers.def.js"></script>
+<script src="js/sigma.webgl.nodes.def.js"></script>
+<script src="js/sigma.webgl.edges.def.js"></script>
+<script src="js/sigma.webgl.edges.fast.js"></script>
+<script src="js/sigma.canvas.labels.def.js"></script>
+<script src="js/sigma.canvas.hovers.def.js"></script>
+<script src="js/sigma.canvas.nodes.def.js"></script>
+<script src="js/sigma.middlewares.rescale.js"></script>
+<script src="js/sigma.misc.bindEvents.js"></script>
+<script src="js/sigma.misc.drawHovers.js"></script>
+<script src="js/sigma.misc.animation.js"></script>
+<script src="js/plot.js"></script>
+<!-- END JS -->
+</body>
+
+</html>
