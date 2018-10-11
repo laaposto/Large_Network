@@ -70,7 +70,7 @@ s.bind('clickNode', function (e) {
     var $twPc_StatValue = $('.twPc-StatValue');
     $('.twPc-bg').css('background-image', 'url("' + e.data.node.bg + '")');
     $('.twPc-avatarLink,.twPc-divUser a').attr('href', 'https://twitter.com/' + e.data.node.id);
-    $('.twPc-avatarImg').attr('src', 'http://twitter.com/' + e.data.node.id + '/profile_image');
+    $('.twPc-avatarImg').attr('src', 'https://avatars.io/twitter/' + e.data.node.id);
     $('.twPc-divName a').text(e.data.node.name);
     $('.twPc-divUser span:eq(1)').text(e.data.node.id);
     $twPc_StatValue.eq(0).text(e.data.node.tweets);
@@ -171,7 +171,7 @@ s.bind('clickNode', function (e) {
     });
     s.refresh();
     for (var i = 0; ((i < connection_div.length) && (i < 15)); i++) {
-        $('#connections_users').append('<div class="connection_user"><div class="connection_user_img_wrapper"><img src="http://twitter.com/' + connection_div[i].user + '/profile_image" class="connection_user_img"><div class="legendcolor" style="background-color:' + connection_div[i].color + ';"></div></div><p class="connection_user_name">' + connection_div[i].user + '</p><br><p class="connection_user_count">Degree: ' + connection_div[i].size + '</p></div>');
+        $('#connections_users').append('<div class="connection_user"><div class="connection_user_img_wrapper"><img src="https://avatars.io/twitter/' + connection_div[i].user + '" class="connection_user_img"><div class="legendcolor" style="background-color:' + connection_div[i].color + ';"></div></div><p class="connection_user_name">' + connection_div[i].user + '</p><br><p class="connection_user_count">Degree: ' + connection_div[i].size + '</p></div>');
     }
     $('.connection_user_name:contains(' + e.data.node.id + ')').parents('.connection_user').remove();
 });
